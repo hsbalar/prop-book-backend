@@ -34,7 +34,7 @@ export function start() {
       routes(app);
 
       // start server
-      app.server.listen(process.env.PORT || 9000, (err) => {
+      app.server.listen(process.env.PORT || 4000, (err) => {
         if (err) {
           return reject(err);
         }
