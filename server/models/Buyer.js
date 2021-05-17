@@ -20,8 +20,14 @@ const Buyer = new Schema({
   areaUnit: String,
   about: String,
   availableFrom: Date,
-  isActive: Boolean,
-  createdAt: Date,
+  isActive: {
+    type: Boolean,
+    default: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-export default mongoose.model('Buyer', Role);
+export default mongoose.model('Buyer', Buyer);
