@@ -1,22 +1,24 @@
 import mongoose, { Schema } from 'mongoose';
 
-const Buyer = new Schema({
+const Property = new Schema({
   personName: String,
   personPhone: String,
-  saleType: String,
   listType: String,
   categoryType: String,
   propertyType: String,
+  postBy: String,
+  isNewProperty: String,
   city: String,
   projectName: String,
   locality: String,
   address: String,
-  bedrooms: Number,
-  noOfFloors: Number,
-  propertyFloorNo: Number,
+  bedrooms: String,
+  noOfFloors: String,
+  propertyFloorNo: String,
   price: Number,
   pricePerUnit: Number,
-  area: Number,
+  builtUpArea: Number,
+  carpetArea: Number,
   areaUnit: String,
   about: String,
   availableFrom: Date,
@@ -30,4 +32,4 @@ const Buyer = new Schema({
   },
 });
 
-export default mongoose.model('Buyer', Buyer);
+export default mongoose.model('Property', Property);

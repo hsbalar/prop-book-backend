@@ -15,6 +15,10 @@ export default function (app) {
     next();
   });
 
+  app.get('/api/init', [verifyToken], (req, res) => {
+    res.json({ session: 'Initiliazed' });
+  });
+
   app.get('/api/test/all', allAccess);
 
   app.get('/api/test/user', [verifyToken], userBoard);

@@ -1,9 +1,9 @@
 import auth from './auth';
 import user from './user';
-import buyer from './buyer';
+import property from './property';
 
 export default function (app) {
   auth(app);
   user(app);
-  buyer(app);
+  property(app);
 }
