@@ -26,6 +26,7 @@ export default function () {
       .connect(uris, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
+        useCreateIndex: true,
       })
       .then(() => {
         initial();

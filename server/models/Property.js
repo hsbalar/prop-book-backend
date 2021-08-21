@@ -1,4 +1,5 @@
 import mongoose, { Schema } from 'mongoose';
+import mongoosePaginate from 'mongoose-paginate-v2';
 
 const Property = new Schema({
   personName: String,
@@ -32,4 +33,17 @@ const Property = new Schema({
   },
 });
 
-export default mongoose.model('Property', Property);
+Property.plugin(mongoosePaginate);
+Property.index({
+  personName: 'text',
+  personPhone: 'text',
+  city: 'text',
+  projectName: 'text',
+  locality: 'text',
+  address: 'text',
+  about: 'text',
+});
+
+const PropertyModel = mongoose.model('Property', Property);
+PropertyModel.createIndexes();
+export default PropertyModel;

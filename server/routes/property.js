@@ -1,14 +1,18 @@
-import { verifyToken, isAdmin, isModerator } from '../middleware/auth';
+import { verifyToken } from '../middleware/auth';
 import {
   saveProperty,
   getProperty,
   updateProperty,
   deleteProperty,
+  getDashboard,
+  filterProperty,
 } from '../controller/property';
 
 export default function (app) {
-  app.post('/api/save-property', saveProperty);
-  app.post('/api/update-property', updateProperty);
-  app.post('/api/delete-property', deleteProperty);
-  app.post('/api/properties', getProperty);
+  app.get('/api/metrix', verifyToken, getDashboard);
+  app.post('/api/save-property', verifyToken, saveProperty);
+  app.post('/api/update-property', verifyToken, updateProperty);
+  app.post('/api/delete-property', verifyToken, deleteProperty);
+  app.post('/api/properties', verifyToken, getProperty);
+  app.post('/api/filter', verifyToken, filterProperty);
 }
