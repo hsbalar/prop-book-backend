@@ -9,6 +9,7 @@ const Property = new Schema({
   propertyType: String,
   postBy: String,
   isNewProperty: String,
+  isNegotiable: Boolean,
   city: String,
   projectName: String,
   locality: String,

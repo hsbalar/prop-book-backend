@@ -1,10 +1,4 @@
-import { verifyToken, isAdmin, isModerator } from '../middleware/auth';
-import {
-  moderatorBoard,
-  adminBoard,
-  userBoard,
-  allAccess,
-} from '../controller/user';
+import { verifyToken } from '../middleware/auth';
 
 export default function (app) {
   app.use(function (req, res, next) {
@@ -18,12 +12,4 @@ export default function (app) {
   app.get('/api/init', [verifyToken], (req, res) => {
     res.json({ session: 'Initiliazed' });
   });
-
-  app.get('/api/test/all', allAccess);
-
-  app.get('/api/test/user', [verifyToken], userBoard);
-
-  app.get('/api/test/mod', [verifyToken, isModerator], moderatorBoard);
-
-  app.get('/api/test/admin', [verifyToken, isAdmin], adminBoard);
 }
