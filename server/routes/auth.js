@@ -13,11 +13,11 @@ export default function (app) {
     next();
   });
 
-  app.post(
-    '/api/auth/signup',
-    [checkDuplicateUsernameOrEmail, checkRolesExisted],
-    signup
-  );
+  // app.post(
+  //   '/api/auth/signup',
+  //   [checkDuplicateUsernameOrEmail, checkRolesExisted],
+  //   signup
+  // );
 
   app.post('/api/auth/signin', signin);
 }
