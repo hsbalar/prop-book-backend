@@ -1,8 +1,7 @@
 export default {
   // mongodb configuration
   database: {
-    url:
-      'mongodb+srv://proBookDb:eH.7EdgeXj7KkB.@cluster0.3hotk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+    url: process.env.DB_HOST,
     options: {
       user: '',
       pass: '',

@@ -6,6 +6,7 @@ import {
   deleteProperty,
   getDashboard,
   filterProperty,
+  advanceFilter,
 } from '../controller/property';
 
 export default function (app) {
@@ -15,4 +16,5 @@ export default function (app) {
   app.post('/api/delete-property', verifyToken, deleteProperty);
   app.post('/api/properties', verifyToken, getProperty);
   app.post('/api/filter', verifyToken, filterProperty);
+  app.post('/api/advance-filter', verifyToken, advanceFilter);
 }

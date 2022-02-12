@@ -43,6 +43,10 @@ Property.index({
   locality: 'text',
   address: 'text',
   about: 'text',
+  postBy: 'text',
+  propertyType: 'text',
+  bedrooms: 'text',
+  isNewProperty: 'text',
 });
 
 const PropertyModel = mongoose.model('Property', Property);
